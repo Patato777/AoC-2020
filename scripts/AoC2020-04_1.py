@@ -1,6 +1,4 @@
-import re
-
-with open('AoC2020-04.txt') as f :
+with open('../inputs/AoC2020-04.txt') as f :
     inp = f.read()
 
 l = inp.split('\n\n')

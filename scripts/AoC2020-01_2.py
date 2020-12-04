@@ -1,4 +1,4 @@
-with open('AoC2020-01.txt','r') as f :
+with open('../inputs/AoC2020-01.txt','r') as f :
     inp = f.readlines()
 
 l = [int(line[:-1]) for line in inp]

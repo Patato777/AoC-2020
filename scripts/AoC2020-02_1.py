@@ -1,4 +1,4 @@
-with open('AoC2020-02.txt','r') as f :
+with open('../inputs/AoC2020-02.txt','r') as f :
     inp = f.readlines()
 
 count = 0

@@ -1,4 +1,4 @@
-with open('Aoc2020-03.txt','r') as f:
+with open('../inputs/AoC2020-03.txt','r') as f:
     inp = f.read()
 
 l = inp.splitlines()
