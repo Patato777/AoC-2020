@@ -1,7 +1,7 @@
 import re
 
 pattern = re.compile(r'(?<=mem\[)(\d+)\] = (\d+)')
-defrag,alloc,paths = list(),0,dict()
+values = dict()
 
 def floating(adr) :
     if 'X' in adr :
@@ -24,10 +24,6 @@ with open('../inputs/AoC2020-14.txt','r') as file :
                     bin_adr[k] = bit
             for adr in floating(bin_adr) :
                 new_adr = int(''.join(adr),2)
-                if new_adr not in paths :
-                    paths[new_adr] = alloc
-                    defrag.append(0)
-                    alloc +=1
-                defrag[paths[new_adr]] = value
+                values[new_adr] = value
 
-print(sum(defrag))
+print(sum(values.values()))
