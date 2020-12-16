@@ -1,6 +1,5 @@
-import re,time
+import re
 from functools import reduce
-t1 = time.time()
 
 notes_patt = re.compile('(.+): (\d+)-(\d+) or (\d+)-(\d+)')
 
@@ -19,10 +18,11 @@ with open('../inputs/AoC2020-16.txt','r') as file :
         field,r1start,r1end,r2start,r2end = match.groups()
         range1 = range(int(r1start),int(r1end)+1)
         range2 = range(int(r2start),int(r2end)+1)
-        fields[field] = list(range1)+list(range2)
+        fields[field] = set(list(range1)+list(range2))
         valid.extend(fields[field])
         line = file.readline()
 
+    valid = set(valid)
     file.readline()
     myticket = file.readline().split(',')
 
